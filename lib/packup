@@ -1,0 +1,113 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp( Myapp());
+}
+ class Myapp extends StatefulWidget {
+   const Myapp({Key? key}) : super(key: key);
+
+   @override
+   State<Myapp> createState() => _MyappState();
+ }
+
+ class _MyappState extends State<Myapp> {
+   int counter = 0 ;
+   @override
+   Widget build(BuildContext context) {
+     return  MaterialApp(
+       debugShowCheckedModeBanner: false,
+       home: Scaffold(
+         appBar: AppBar(
+           title: Center(
+             child: Text("فَذَكِّرْ إِن نَّفَعَتِ الذِّكْرَى"),),
+
+           flexibleSpace: Image(
+             image: AssetImage ("assets/Image01.jpeg"),
+             fit: BoxFit.cover,
+           ),
+           ),
+        body: Container(
+           decoration: BoxDecoration(
+           image: DecorationImage(image:AssetImage("assets/Image02.jpeg"),
+             fit: BoxFit.cover
+           ),
+         ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: 200,),
+              Text("الله اكبر",
+                style: TextStyle(
+                    color: Color(0xFFf9f3e2),
+                    fontSize:40),),
+          SizedBox(height: 15),
+          Text("$counter",
+            style: TextStyle(
+              fontSize: 40,color: Color(0xFFf9f3e2),
+            ),),
+          SizedBox(height: 30,),
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 2,
+                    color: Colors.white,
+                  ),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text("إضغط",
+                    style: TextStyle(fontSize: 33,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFf9f3e2),
+
+
+                  ),
+
+                ),
+              ),
+              ),
+              SizedBox(
+                height: 160,
+              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                SizedBox(width: 10,),
+              Text("البدء مرة أخرى",
+              style: TextStyle(fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFf9f3e2),
+              ),),
+                SizedBox(width: 128,),
+                Text("دورة جديدة",
+                  style: TextStyle(fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFf9f3e2),
+                  ),),
+
+              ],
+
+            ),
+
+
+
+
+           ],
+
+
+
+
+          ),
+        ),
+
+
+       ),
+      ),
+     );
+   }
+ }
